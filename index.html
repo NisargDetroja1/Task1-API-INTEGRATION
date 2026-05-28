@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <h1>Weather</h1>
+        <p class="tagline">Fast • Simple • Reliable</p>
+      </header>
+
+      <main class="card">
+        <form
+          class="search-form"
+          onsubmit="
+            event.preventDefault();
+            getWeather();
+          "
+        >
+          <div class="input-group">
+            <input
+              type="text"
+              id="city"
+              placeholder="Enter city or ZIP"
+              aria-label="City name"
+            />
+            <button type="button" class="btn" onclick="getWeather()">
+              Get Weather
+            </button>
+          </div>
+        </form>
+
+        <div id="result" class="result" aria-live="polite"></div>
+
+        <footer class="credit">Powered by OpenWeatherMap</footer>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
